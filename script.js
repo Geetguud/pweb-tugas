@@ -9,28 +9,28 @@ const keyboard = [
     ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
     ["z", "x", "c", "v", "b", "n", "m"]
 ];
-const keyboardLines = document.getElementsByClassName("boardline");
+const keyboardLines = document.getElementsByClassName("keyboard-line");
 
-const enterKey = document.createElement("div");
+const enterKey = document.createElement("button");
 enterKey.id = "enterkey";
-enterKey.className = "boardkey";
+enterKey.className = "keyboard-key";
 enterKey.textContent = "Enter";
 enterKey.onclick = keyFunction("enter");
 keyboardLines[2].appendChild(enterKey);
 
 for (let i = 0; i < keyboard.length; i++) {
     for (let j = 0; j < keyboard[i].length; j++) {
-        const key = document.createElement("div");
-        key.className = "boardkey";
+        const key = document.createElement("button");
+        key.className = "keyboard-key";
         key.textContent = keyboard[i][j].toUpperCase();
         key.onclick = keyFunction(keyboard[i][j]);
         keyboardLines[i].appendChild(key);
     }
 }
 
-const backspaceKey = document.createElement("div");
+const backspaceKey = document.createElement("button");
 backspaceKey.id = "backspacekey";
-backspaceKey.className = "boardkey";
+backspaceKey.className = "keyboard-key";
 backspaceKey.textContent = "Delete";
 backspaceKey.onclick = keyFunction("delete");
 keyboardLines[2].appendChild(backspaceKey);
@@ -45,7 +45,7 @@ let guessedWord = [];
 let currentLetter = 0;
 let currentLine = 0;
 
-const wordLines = document.getElementsByClassName("line");
+const wordLines = document.getElementsByClassName("wordle-line");
 const wordLetters = [];
 for (let i = 0; i < 6; i++) {
     wordLetters[i] = wordLines[i].children;
@@ -80,14 +80,16 @@ function submitWord() {
 
     for (let i = 0; i < 5; i++) {
         if (guessedWord[i] == wordle[i]) {
-            wordLetters[currentLine][i].className = "letter correct";
+            wordLetters[currentLine][i].className = "wordle-letter correct";
+        } else if (wordle.includes(guessedWord[i])) {
+            wordLetters[currentLine][i].className = "wordle-letter partial";
         } else {
-            wordLetters[currentLine][i].className = "letter wrong";
+            wordLetters[currentLine][i].className = "wordle-letter wrong";
         }
     }
     
     if (guessedWord.join("") == wordle || currentLine == 5) {
-        let elements = document.getElementsByTagName("div");
+        let elements = document.getElementsByTagName("button");
         for (let i = 0; i < elements.length; i++) {
             elements[i].onclick = null;
         }
