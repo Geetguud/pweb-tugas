@@ -3,64 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>woredle</title>
+    <title>simple-kalkulatour</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>woredle</h1>
-    <p>(refresh page to restart game)</p>
-    <div id="wordle-gaming">
-        <div class="wordle-line">
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
+    <h1>simple-kalkulatour</h1>
+    <input id="input" placeholder="enter simple calculations..." type="text">
+    <div id="container-buttons">  
+        <div id="container-numbers">
+            <button class="keys" onclick="inputKey('1')">1</button>
+            <button class="keys" onclick="inputKey('2')">2</button>
+            <button class="keys" onclick="inputKey('3')">3</button>
+            <button class="keys" onclick="inputKey('4')">4</button>
+            <button class="keys" onclick="inputKey('5')">5</button>
+            <button class="keys" onclick="inputKey('6')">6</button>
+            <button class="keys" onclick="inputKey('7')">7</button>
+            <button class="keys" onclick="inputKey('8')">8</button>
+            <button class="keys" onclick="inputKey('9')">9</button>
+            <div></div>
+            <button class="keys" onclick="inputKey('0')">0</button>
+            <button class="keys" onclick="inputKey('.')">.</button>
         </div>
-        <div class="wordle-line">
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-        </div>
-        <div class="wordle-line">
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-        </div>
-        <div class="wordle-line">
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-        </div>
-        <div class="wordle-line">
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-        </div>
-        <div class="wordle-line">
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
-            <div class="wordle-letter"></div>
+        <div id="container-operators">
+            <button class="keys" onclick="clearInput('C')">C</button>
+            <button class="keys" onclick="clearInput('CE')">CE</button>
+            <button class="keys" onclick="inputKey('+')">+</button>
+            <button class="keys" onclick="inputKey('-')">-</button>
+            <button class="keys" onclick="inputKey('*')">*</button>
+            <button class="keys" onclick="inputKey('/')">/</button>
+            <button class="keys" onclick="calculate()">=</button>
         </div>
     </div>
-    <div>
-        <div class="keyboard-line"></div>
-        <div class="keyboard-line"></div>
-        <div class="keyboard-line"></div>
-    </div>
 
-
-    <script type="text/javascript" src="words.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script src="parseinput.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

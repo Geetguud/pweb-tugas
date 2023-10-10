@@ -1,73 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@300;400;600;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-align: center;
+:root {
+    --siz: 1.8rem;
 }
 
 html {
     max-width: 70ch;
-    padding: 1em 1em;
+    padding: 3em 1em;
     margin: auto;
-    font-size: 1.25em;
+    line-height: 1.75;
+    font-size: 1.5em;
     font-family: 'Asap', sans-serif;
     background-color: #fafafa;
 }
 
-h1 {
-    margin-bottom: 0.5rem;
-}
-
-#wordle-gaming {
-    margin: 1.2rem 0;
-}
-
-.wordle-line {
+body {
     display: flex;
-    justify-content: center;
-    margin: 0.5rem 0;
+    flex-direction: column;
+    align-items: center;
 }
 
-.wordle-letter {
-    border: 0.05rem solid black;
-    border-radius: 0.2rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0 0.2rem;
-    padding: 0.5rem 0;
+button, input { font-family: 'Asap', sans-serif; }
+
+#input {
+    width: 12rem;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.4rem;
+    border: 0.08rem solid #3e6665;
+    background-color: transparent;
 }
 
-.wordle-letter.correct {
-    background-color: #90ed90;
-}
-
-.wordle-letter.wrong {
-    background-color: #ed9090;
-}
-
-.wordle-letter.partial {
-    background-color: #ede290;
-}
-
-.keyboard-line {
+#container-buttons {
     display: flex;
-    justify-content: center;
-    margin: 0.5rem 0;
+    margin-top: 1rem;
 }
 
-.keyboard-key {
-    min-width: 2.5rem;
-    height: 2.5rem;
-    border: 0.05rem solid black;
-    border-radius: 0.2rem;
-    margin: 0 0.2rem;
-    font-size: 1.2rem;
-    padding: 0.5rem 0.7rem;
+#container-numbers {
+    display: grid;
+    grid-template-columns: var(--siz) var(--siz) var(--siz);
+    grid-auto-rows: var(--siz);
+    gap: 0.2rem;
+    margin-right: 1rem;
 }
 
-.keyboard-key:hover {
-    background-color: #dddddd;
+#container-operators {
+    display: grid;
+    grid-template-columns: var(--siz) var(--siz);
+    grid-auto-rows: var(--siz);
+    gap: 0.2rem;
+}
+
+.keys {
     cursor: pointer;
+    border: 0.01rem solid #3e6665;
+    color: #3e6665;
+    background-color: transparent;
+    font-size: 0.8rem;
+}
+
+.keys:hover {
+    background-color: #dddddd;
+    transition: background-color 0.3s;
 }
