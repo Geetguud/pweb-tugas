@@ -2,6 +2,8 @@
 
 :root {
     --siz: 1.8rem;
+    --theme-light: #fafafa;
+    --theme-dark: #599290;
 }
 
 html {
@@ -9,9 +11,14 @@ html {
     padding: 3em 1em;
     margin: auto;
     line-height: 1.75;
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-family: 'Asap', sans-serif;
-    background-color: #fafafa;
+    background-color: var(--theme-light);
+}
+
+h1 {
+    text-align: center;
+    line-height: normal;
 }
 
 body {
@@ -26,7 +33,7 @@ button, input { font-family: 'Asap', sans-serif; }
     width: 12rem;
     font-size: 0.8rem;
     padding: 0.25rem 0.4rem;
-    border: 0.08rem solid #3e6665;
+    border: 0.08rem solid var(--theme-dark);
     background-color: transparent;
 }
 
@@ -52,13 +59,20 @@ button, input { font-family: 'Asap', sans-serif; }
 
 .keys {
     cursor: pointer;
-    border: 0.01rem solid #3e6665;
-    color: #3e6665;
-    background-color: transparent;
-    font-size: 0.8rem;
+    border: none;
+    background-color: var(--theme-dark);
+    color: var(--theme-light);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.1rem;
+    padding: 0;
 }
 
 .keys:hover {
-    background-color: #dddddd;
-    transition: background-color 0.3s;
+    transform: scale(1.1);
+    transition: transform 0.15s;
+}
+
+@media only screen and (max-width: 600px) {
+    html { font-size: 1.2em; }
 }
